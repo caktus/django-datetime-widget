@@ -219,7 +219,7 @@ class PickerWidgetMixin(object):
 
         super(PickerWidgetMixin, self).__init__(attrs, format=self.format)
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, renderer=None, attrs=None):
         final_attrs = self.build_attrs(attrs)
         rendered_widget = super(PickerWidgetMixin, self).render(name, value, final_attrs)
 
@@ -330,4 +330,3 @@ class TimeWidget(PickerWidgetMixin, TimeInput):
         options['format'] = options.get('format', 'hh:ii')
 
         super(TimeWidget, self).__init__(attrs, options, usel10n, bootstrap_version)
-
